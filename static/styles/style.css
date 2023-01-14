@@ -1,0 +1,72 @@
+#title_index{
+    display: flex;
+    justify-content: center;
+}
+p{
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: rgb(224, 228, 225);
+}
+body{
+    background-color: #4c35d1;
+}
+.container{
+    border-radius: 30px;
+    margin: auto;
+    background-color: rgb(0, 0, 128);
+    width: 60vw;
+    height:fit-content;
+}
+.login{
+    background: #0095ff;
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 2vw;
+}
+.user, .pass{
+    color: rgb(17, 255, 187);
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    padding: 1vw;
+    align-items: center;
+}
+input{
+    margin-left: 2vw;
+    height: 30px;
+    background-color: rgb(163, 246, 255);
+}
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vw;
+    padding-bottom: 3vw;
+}
+.actions input{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border-color:  rgb(17, 255, 187);
+    background-color: rgb(0, 255, 136);
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.actions a{
+    margin-left: 2vw;
+    color: wheat;
+}
+.dolphin{
+    background-image: url('./Picture1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 500px;
+    position: fixed;
+    top: 25px;
+    left: 70vw;
+    /* bottom: -9px; */
+    top: -30px;
+}

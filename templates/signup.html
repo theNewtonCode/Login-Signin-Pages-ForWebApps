@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <div id="title_index">
+        <p>SignUp Page using Flask</p>
+    </div>
+    <div class="container">
+        <div class="login">
+            <h2>SignUp</h2>
+        </div>
+        <form action="/signup" method='post'>
+            <div class="user">
+                <label for="userinput" class="inputs">UserName</label>
+                <input type="text" name="username" id="userinput">
+            </div>
+            <div class="pass">
+                <label for="passinput" class="inputs">Password</label>
+                <input type="password" name="password" id="passinput">
+            </div>
+            <div class="actions">
+                <input type="submit" id="signbtn" value="signup" onmouseenter="signin_input_validate()">
+                <a href="/loginpage" id="loginlink">Go to login page</a>
+            </div>
+        </form>
+        <div class="dolphin">hello</div>
+    </div>
+
+    <script type="text/javascript">
+        function signin_input_validate() {
+            var password = document.getElementById("passinput");
+            var username = document.getElementById('userinput');
+            if (username.value.length < 2) {
+                alert("Enter a valid username with more than 2 characters!");
+            }
+            if (username.value.length > 2 & password.value.length < 4) {
+                alert("Create a valid password with atleast 4 characters")
+            }
+        }
+        function success_signup(){
+            onload = eval('x=true')
+            var val = '{{ data | tojson }}';
+            var userdata2 = JSON.parse(val);
+            if(userdata2.signup==true){
+                alert("You are signed in successfully, try logging in!");
+            }
+            if (userdata2.signup==false){
+                alert("Your username already exists, sign in with different username");
+            }
+        }
+        document.getElementById('signbtn').onsubmit = success_signup();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style_login.css') }}">
+    <!-- <link rel="stylesheet" href="style_login.css"> -->
+    <!-- <script type="text/javascript" href="{{ url_for('static',filename='app.js') }}"></script> -->
+    <title>LoginApp</title>
+</head>
+
+<body>
+    <div id="title_index">
+        <p>Login Page using Flask</p>
+    </div>
+    <div class="container">
+        <div class="login">
+            <h2>Login</h2>
+        </div>
+        <form action="/loginpage" method='post'>
+            <div class="user">
+                <label for="userinput" class="inputs">UserName</label>
+                <input type="text" name="username" id="userinput">
+            </div>
+            <div class="pass">
+                <label for="passinput" class="inputs">Password</label>
+                <input type="password" name="password" id="passinput">
+            </div>
+            <div class="actions">
+                <input type="submit" name="postbtn" id="loginbtn" value="Login" onmouseenter="login_input_validate()">
+                <a href="/signup" id="signuplink">New user? signup now!</a>
+                <!-- <input type="submit" name="postbtn" id="signbtn" value="signup" onmouseenter="signin_input_validate()"> -->
+            </div>
+            <!-- <button id="checkLogin">hello</button> -->
+        </form>
+    </div>
+    <div class="panda">
+    </div>
+
+    <script type="text/javascript">
+        function login_input_validate() {
+            var username = document.getElementById('userinput');
+            if (username.value.length < 2) {
+                alert("Enter a valid username with more than 2 characters!");
+            }
+            var password = document.getElementById("passinput");
+            if (username.value.length > 2 & password.value.length == 0) {
+                alert("Enter your password!!");
+            }
+        }
+        function successLogin() {
+            myVar = '{{ data | tojson }}';
+            var userdata = JSON.parse(myVar);
+            // console.log(userdata);
+            var name = userdata.username
+            if(userdata.log_in==true){
+            window.location.pathname = ('/thework/'+name)
+            // $.ajax({
+            //     url:"/thework", type:'POST', contentType:"application/json", data:JSON.stringify(userdata)
+            // });
+            }
+            // if(userdata.log_in==false & name.length != 0){
+            //     alert("Enter correct credentials");
+            // }
+}
+        // document.getElementById('signbtn').onsubmit = success_signup();
+        document.getElementById('loginbtn').onsubmit = successLogin();
+    </script>
+</body>
+</html>

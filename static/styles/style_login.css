@@ -1,0 +1,79 @@
+#title_index{
+    display: flex;
+    justify-content: center;
+}
+p{
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: rgb(55, 53, 52);
+}
+body{
+    background-color: white;
+}
+.container{
+    /* margin-top: 5vh; */
+    border-radius: 30px;
+    margin: auto;
+    background-color: rgb(194, 166, 110);
+    width: 60vw;
+    height:fit-content;
+}
+.login{
+    background: rgb(105, 127, 61);
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-bottom: 2vw;
+}
+.user, .pass{
+    color: #413521;
+    font-size: large;
+    display: flex;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    padding: 1vw;
+    align-items: center;
+}
+input{
+    border-color:#7a6542;
+    border-width: 3px;
+    margin-left: 2vw;
+    height: 30px;
+    background-color:rgb(232, 226, 234);
+}
+.actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vw;
+    padding-bottom: 3vw;
+}
+.actions input{
+    color: #979f5c;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border-color:  rgb(79, 83, 48);
+    background-color: rgb(30, 32, 18);
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.actions a{
+    margin-left: 2vw;
+    color: white;
+    text-decoration: none;
+
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+.panda{
+    background-image: url("./pandapic.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 45vh;
+    width: 39vw;
+    position: fixed;
+    top: 25px;
+    left: 33px;
+    bottom: -9px;
+    top: 55vh;
+}
